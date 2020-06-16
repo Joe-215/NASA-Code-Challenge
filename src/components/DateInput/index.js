@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import DatePicker from 'react-datepicker';
+import classNames from 'classnames';
 
 import 'react-datepicker/dist/react-datepicker.css';
+import classes from './styles.module.scss';
 
 const MIN_DATE = new Date(1995, 5, 16);
 const TODAY = new Date();
@@ -24,7 +26,7 @@ function randomDate(start, end) {
 }
 
 const DateInput = ({ date, onChange }) => {
-  const handleGenerateRandomDate = () => {
+  const handleRandomDateClick = () => {
     onChange(randomDate(MIN_DATE, TODAY));
   };
 
@@ -43,8 +45,11 @@ const DateInput = ({ date, onChange }) => {
       />
 
       <div>
-        <button onClick={handleGenerateRandomDate} className="btn btn-primary">
-          Random Image
+        <button
+          onClick={handleRandomDateClick}
+          className={classNames('btn', 'btn-default', classes.button)}
+        >
+          Random Date
         </button>
       </div>
     </div>
