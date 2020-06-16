@@ -1,20 +1,26 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+import classNames from 'classnames';
 
-class App extends Component {
-  render() {
-    const headerStyle = {
-      textShadow: '1px 2px #282794',
-      textAlign: 'center',
-    };
+import DateInput from './components/DateInput';
 
-    return (
-      <div className="container">
-        <div className="card card-body">
-          <h2 style={headerStyle}>NASA's Picture of the Day</h2>
+import classes from './App.module.scss';
+
+const App = () => {
+  const [date, setDate] = useState(null);
+
+  return (
+    <div className="container">
+      <div className="card">
+        <div className="card-body">
+          <h2 className={classNames('card-title', classes.header)}>
+            NASA's Picture of the Day
+          </h2>
+
+          <DateInput date={date} onChange={setDate} />
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default App;
