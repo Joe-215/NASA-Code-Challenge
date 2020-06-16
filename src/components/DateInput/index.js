@@ -41,6 +41,8 @@ const DateInput = ({ date, onChange }) => {
         minDate={MIN_DATE}
         maxDate={TODAY}
         selected={date}
+        showYearDropdown
+        showMonthDropdown
         onChange={onChange}
       />
 
