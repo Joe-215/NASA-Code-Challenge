@@ -8,3 +8,13 @@
   text-shadow: 1px 2px #8b0100;
   text-align: center;
 }
+
+.content {
+  margin-bottom: 1rem;
+
+  img,
+  iframe {
+    border-radius: 2px;
+    width: 100%;
+  }
+}
